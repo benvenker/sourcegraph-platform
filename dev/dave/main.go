@@ -16,6 +16,6 @@ func main() {
 	if err != nil {
 		err = errors.Wrap(err, "term.GetWinsize:")
 	} else {
-		fmt.Println(ws)
+		fmt.Printf("%d:%d\n", ws.Height, ws.Width)
 	}
 }

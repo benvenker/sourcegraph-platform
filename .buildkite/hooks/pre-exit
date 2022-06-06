@@ -31,6 +31,6 @@ set -ex # Not -u because $SOFT_FAIL_EXIT_CODES may not be bound
 echo "testing dave"
 go run ./dev/dave/
 
-echo "--- Uploading build logs: this only runs if your build has already failed, check the logs above, NOT below!"
-./enterprise/dev/ci/scripts/upload-build-logs.sh
-# fi
+# echo "--- Uploading build logs: this only runs if your build has already failed, check the logs above, NOT below!"
+# ./enterprise/dev/ci/scripts/upload-build-logs.sh
+# # fi
