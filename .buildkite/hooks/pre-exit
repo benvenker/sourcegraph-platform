@@ -4,7 +4,7 @@
 # It's a quick hack to circumvent the problem describe in
 # https://github.com/sourcegraph/sourcegraph/issues/27264.
 
-set -ex # Not -u because $SOFT_FAIL_EXIT_CODES may not be bound
+set -e # Not -u because $SOFT_FAIL_EXIT_CODES may not be bound
 
 # if [[ "$BUILDKITE_PIPELINE_NAME" != "sourcegraph" ]]; then
 #     exit 0
@@ -28,16 +28,6 @@ set -ex # Not -u because $SOFT_FAIL_EXIT_CODES may not be bound
 #     done
 
 #     # Non-zero exit code and not a soft fail: upload the logs.
-echo "--- Uploading build logs: this only runs if your build has already failed, check the logs above, NOT below!"
+#     echo "--- Uploading build logs: this only runs if your build has already failed, check the logs above, NOT below!"
 ./enterprise/dev/ci/scripts/upload-build-logs.sh
-# # fi
-
-# echo "testing dave"
-pushd ./dev/dave
-
-go build -o dave
-
-./dave
-
-popd
-# go run ./dev/dave/
+# fi
