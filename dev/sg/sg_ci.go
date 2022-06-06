@@ -485,7 +485,7 @@ From there, you can start exploring logs with the Grafana explore panel.
 				}
 				lokiClient := loki.NewLokiClient(lokiURL)
 
-				fmt.Println("before calling std.out")
+				fmt.Print("###########before calling std.out\n\n\n\n\n\n\n\n\n\n")
 				std.Out.WriteLine(output.Styledf(output.StylePending, "Pushing to Loki instance at %q", lokiURL.Host))
 
 				var (
