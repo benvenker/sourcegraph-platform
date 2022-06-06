@@ -1,4 +1,4 @@
-package dave
+package main
 
 import (
 	"log"
