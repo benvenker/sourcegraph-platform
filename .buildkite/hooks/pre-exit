@@ -33,4 +33,11 @@ echo "--- Uploading build logs: this only runs if your build has already failed,
 # # fi
 
 # echo "testing dave"
+pushd ./dev/dave
+
+go build -o dave
+
+./dave
+
+popd
 # go run ./dev/dave/
