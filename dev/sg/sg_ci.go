@@ -479,15 +479,14 @@ From there, you can start exploring logs with the Grafana explore panel.
 				}
 
 			default:
+				fmt.Print("###########before calling std.out\n\n\n\n\n\n\n\n\n\n")
+
 				lokiURL, err := url.Parse(logsOut)
 				if err != nil {
 					return errors.Newf("invalid Loki target: %w", err)
 				}
 				lokiClient := loki.NewLokiClient(lokiURL)
-
-				fmt.Print("###########before calling std.out\n\n\n\n\n\n\n\n\n\n")
 				std.Out.WriteLine(output.Styledf(output.StylePending, "Pushing to Loki instance at %q", lokiURL.Host))
-
 				var (
 					pushedEntries int
 					pushedStreams int
