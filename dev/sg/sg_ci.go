@@ -484,6 +484,8 @@ From there, you can start exploring logs with the Grafana explore panel.
 					return errors.Newf("invalid Loki target: %w", err)
 				}
 				lokiClient := loki.NewLokiClient(lokiURL)
+
+				fmt.Println("before calling std.out")
 				std.Out.WriteLine(output.Styledf(output.StylePending, "Pushing to Loki instance at %q", lokiURL.Host))
 
 				var (
