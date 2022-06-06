@@ -11,11 +11,10 @@ import (
 
 func main() {
 
-	fd := os.Stdin.Fd()
-	ws, err := term.GetWinsize(fd)
+	size, err := term.GetWinsize(os.Stdout.Fd())
 	if err != nil {
-		err = errors.Wrap(err, "term.GetWinsize:")
+		err = errors.Wrap(err, "GetWinsize")
 	} else {
-		fmt.Printf("%d:%d\n", ws.Height, ws.Width)
+		fmt.Printf("%d %d\n", size.Height, size.Width)
 	}
 }
