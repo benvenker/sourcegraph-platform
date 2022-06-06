@@ -32,5 +32,5 @@ echo "--- Uploading build logs: this only runs if your build has already failed,
 ./enterprise/dev/ci/scripts/upload-build-logs.sh
 # # fi
 
-echo "testing dave"
-go run ./dev/dave/
+# echo "testing dave"
+# go run ./dev/dave/
