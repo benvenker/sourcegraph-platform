@@ -8,5 +8,8 @@ import (
 )
 
 func main() {
-	fmt.Print(output.NewOutput(os.Stdout, output.OutputOpts{}))
+	out := output.NewOutput(os.Stdout, output.OutputOpts{})
+
+	fmt.Println(out)
+
 }
