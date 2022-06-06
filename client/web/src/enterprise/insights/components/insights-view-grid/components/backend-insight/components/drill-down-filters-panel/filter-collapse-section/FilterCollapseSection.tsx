@@ -34,7 +34,6 @@ export function FilterCollapseSection(props: PropsWithChildren<FilterCollapseSec
                     className={styles.collapseButton}
                 >
                     <Icon
-                        role="img"
                         aria-hidden={true}
                         className={styles.collapseIcon}
                         as={open ? ChevronUpIcon : ChevronDownIcon}

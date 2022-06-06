@@ -35,8 +35,8 @@ export const MenuNavItem: React.FunctionComponent<React.PropsWithChildren<MenuNa
                             className={classNames('bg-transparent', styles.menuNavItem)}
                             ref={menuButtonRef}
                         >
-                            <Icon role="img" as={MenuIcon} aria-hidden={true} />
-                            <Icon role="img" as={isExpanded ? MenuUpIcon : MenuDownIcon} aria-hidden={true} />
+                            <Icon as={MenuIcon} aria-hidden={true} />
+                            <Icon as={isExpanded ? MenuUpIcon : MenuDownIcon} aria-hidden={true} />
                         </MenuButton>
                         <MenuList position={position}>
                             {React.Children.map(

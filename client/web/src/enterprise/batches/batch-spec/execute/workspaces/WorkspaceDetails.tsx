@@ -124,19 +124,19 @@ const WorkspaceHeader: React.FunctionComponent<React.PropsWithChildren<Workspace
                     : 'Workspace in hidden repository'}
                 {workspace.__typename === 'VisibleBatchSpecWorkspace' && (
                     <Link to={workspace.repository.url} target="_blank" rel="noopener noreferrer">
-                        <Icon role="img" aria-hidden={true} as={ExternalLinkIcon} />
+                        <Icon aria-hidden={true} as={ExternalLinkIcon} />
                     </Link>
                 )}
             </H3>
             <Button className="p-0 ml-2" onClick={deselectWorkspace} variant="icon">
                 <VisuallyHidden>Deselect Workspace</VisuallyHidden>
-                <Icon role="img" aria-hidden={true} as={CloseIcon} />
+                <Icon aria-hidden={true} as={CloseIcon} />
             </Button>
         </div>
         <div className="d-flex align-items-center">
             {typeof workspace.placeInQueue === 'number' && (
                 <span className={classNames(styles.workspaceDetail, 'd-flex align-items-center')}>
-                    <Icon role="img" aria-hidden={true} as={TimelineClockOutlineIcon} />
+                    <Icon aria-hidden={true} as={TimelineClockOutlineIcon} />
                     <strong className="ml-1 mr-1">
                         <NumberInQueue number={workspace.placeInQueue} />
                     </strong>
@@ -148,7 +148,7 @@ const WorkspaceHeader: React.FunctionComponent<React.PropsWithChildren<Workspace
             )}
             {workspace.__typename === 'VisibleBatchSpecWorkspace' && (
                 <span className={styles.workspaceDetail}>
-                    <Icon role="img" aria-hidden={true} as={SourceBranchIcon} /> {workspace.branch.displayName}
+                    <Icon aria-hidden={true} as={SourceBranchIcon} /> {workspace.branch.displayName}
                 </span>
             )}
             {workspace.startedAt && (
@@ -180,7 +180,7 @@ const HiddenWorkspaceDetails: React.FunctionComponent<React.PropsWithChildren<Hi
     <>
         <WorkspaceHeader deselectWorkspace={deselectWorkspace} workspace={workspace} />
         <H1 className="text-center text-muted mt-5">
-            <Icon role="img" aria-hidden={true} as={EyeOffOutlineIcon} />
+            <Icon aria-hidden={true} as={EyeOffOutlineIcon} />
             <VisuallyHidden>Hidden Workspace</VisuallyHidden>
         </H1>
         <Text alignment="center">This workspace is hidden due to permissions.</Text>
@@ -238,7 +238,7 @@ const VisibleWorkspaceDetails: React.FunctionComponent<React.PropsWithChildren<V
                             outline={true}
                             variant="danger"
                         >
-                            <Icon role="img" aria-hidden={true} as={SyncIcon} /> Retry
+                            <Icon aria-hidden={true} as={SyncIcon} /> Retry
                         </Button>
                     </div>
                     {retryError && <ErrorAlert error={retryError} />}
@@ -290,7 +290,7 @@ const IgnoredWorkspaceDetails: React.FunctionComponent<React.PropsWithChildren<I
     <>
         <WorkspaceHeader deselectWorkspace={deselectWorkspace} workspace={workspace} />
         <H1 className="text-center text-muted mt-5">
-            <Icon role="img" aria-hidden={true} as={LinkVariantRemoveIcon} />
+            <Icon aria-hidden={true} as={LinkVariantRemoveIcon} />
             <VisuallyHidden>Ignored Workspace</VisuallyHidden>
         </H1>
         <Text alignment="center">
@@ -311,7 +311,7 @@ const UnsupportedWorkspaceDetails: React.FunctionComponent<
     <>
         <WorkspaceHeader deselectWorkspace={deselectWorkspace} workspace={workspace} />
         <H1 className="text-center text-muted mt-5">
-            <Icon role="img" aria-hidden={true} as={LinkVariantRemoveIcon} />
+            <Icon aria-hidden={true} as={LinkVariantRemoveIcon} />
             <VisuallyHidden>Unsupported Workspace</VisuallyHidden>
         </H1>
         <Text alignment="center">This workspace has been skipped because it is from an unsupported codehost.</Text>
@@ -385,7 +385,7 @@ const ChangesetSpecNode: React.FunctionComponent<React.PropsWithChildren<Changes
                             )}{' '}
                         </H4>
                         <span className="text-muted">
-                            <Icon role="img" aria-hidden={true} as={SourceBranchIcon} /> {node.description.headRef}
+                            <Icon aria-hidden={true} as={SourceBranchIcon} /> {node.description.headRef}
                         </span>
                     </div>
                     <DiffStat {...node.description.diffStat} expandedCounts={true} />
@@ -588,7 +588,6 @@ const StepStateIcon: React.FunctionComponent<React.PropsWithChildren<StepStateIc
     if (step.cachedResultFound) {
         return (
             <Icon
-                role="img"
                 className="text-success"
                 aria-label="A cached result for this step has been found"
                 data-tooltip="A cached result for this step has been found"
@@ -599,7 +598,6 @@ const StepStateIcon: React.FunctionComponent<React.PropsWithChildren<StepStateIc
     if (step.skipped) {
         return (
             <Icon
-                role="img"
                 className="text-muted"
                 aria-label="The step has been skipped"
                 data-tooltip="The step has been skipped"
@@ -610,7 +608,6 @@ const StepStateIcon: React.FunctionComponent<React.PropsWithChildren<StepStateIc
     if (!step.startedAt) {
         return (
             <Icon
-                role="img"
                 className="text-muted"
                 aria-label="This step is waiting to be processed"
                 data-tooltip="This step is waiting to be processed"
@@ -621,7 +618,6 @@ const StepStateIcon: React.FunctionComponent<React.PropsWithChildren<StepStateIc
     if (!step.finishedAt) {
         return (
             <Icon
-                role="img"
                 className="text-muted"
                 aria-label="This step is currently running"
                 data-tooltip="This step is currently running"
@@ -632,7 +628,6 @@ const StepStateIcon: React.FunctionComponent<React.PropsWithChildren<StepStateIc
     if (step.exitCode === 0) {
         return (
             <Icon
-                role="img"
                 className="text-success"
                 aria-label="This step ran successfully"
                 data-tooltip="This step ran successfully"
@@ -642,7 +637,6 @@ const StepStateIcon: React.FunctionComponent<React.PropsWithChildren<StepStateIc
     }
     return (
         <Icon
-            role="img"
             className="text-danger"
             aria-label={`This step failed with exit code ${String(step.exitCode)}`}
             data-tooltip={`This step failed with exit code ${String(step.exitCode)}`}
