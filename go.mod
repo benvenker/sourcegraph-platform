@@ -400,7 +400,7 @@ require (
 	github.com/gopherjs/gopherwasm v1.1.0 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/gosimple/unidecode v1.0.1 // indirect
-	github.com/moby/term v0.0.0-20210619224110-3f7ff695adc6
+	github.com/moby/term v0.0.0-20210619224110-3f7ff695adc6 // indirect
 	github.com/monochromegane/go-gitignore v0.0.0-20200626010858-205db1a8cc00 // indirect
 	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d // indirect
 	github.com/prometheus/common/sigv4 v0.1.0 // indirect
