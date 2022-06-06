@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 function usage {
   cat <<EOF
 Usage: upload-build-logs.sh
