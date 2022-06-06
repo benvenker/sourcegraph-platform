@@ -577,8 +577,9 @@ type ListChangesetsArgs struct {
 }
 
 type ListBatchSpecArgs struct {
-	First int32
-	After *string
+	First               int32
+	After               *string
+	ExcludeNonSSBCSpecs *bool
 }
 
 type AvailableBulkOperationsArgs struct {
