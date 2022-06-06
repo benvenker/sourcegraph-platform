@@ -1,19 +1,21 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"os"
 
 	"github.com/moby/term"
+
+	"github.com/sourcegraph/sourcegraph/lib/errors"
 )
 
 func main() {
+
 	fd := os.Stdin.Fd()
-	if term.IsTerminal(fd) {
-		ws, err := term.GetWinsize(fd)
-		if err != nil {
-			log.Fatalf("term.GetWinsize: %s", err)
-		}
-		log.Printf("%d:%d\n", ws.Height, ws.Width)
+	ws, err := term.GetWinsize(fd)
+	if err != nil {
+		err = errors.Wrap(err, "term.GetWinsize:")
+	} else {
+		fmt.Println(ws)
 	}
 }
