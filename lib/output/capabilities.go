@@ -1,6 +1,7 @@
 package output
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 
@@ -42,6 +43,7 @@ func detectCapabilities(opts OutputOpts) (caps capabilities, err error) {
 	forceAllDimensions := opts.ForceHeight != 0 && opts.ForceWidth != 0
 	if caps.Isatty && !forceAllDimensions {
 		var size *term.Winsize
+		fmt.Println("get win size!!!!!!!!!!")
 		size, err = term.GetWinsize(os.Stdout.Fd())
 		if err == nil {
 			if size != nil {
@@ -51,6 +53,7 @@ func detectCapabilities(opts OutputOpts) (caps capabilities, err error) {
 			}
 		} else {
 			err = errors.Wrap(err, "GetWinsize")
+			fmt.Println("dave testing here")
 		}
 	}
 	// Set overrides
