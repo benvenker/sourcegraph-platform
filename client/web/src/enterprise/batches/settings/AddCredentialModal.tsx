@@ -184,7 +184,8 @@ export const AddCredentialModal: React.FunctionComponent<React.PropsWithChildren
                                             id="username"
                                             name="username"
                                             autoComplete="off"
-                                            className="mb-2 form-group"
+                                            inputClassName="mb-2"
+                                            className="mb-0"
                                             required={true}
                                             spellCheck="false"
                                             minLength={1}

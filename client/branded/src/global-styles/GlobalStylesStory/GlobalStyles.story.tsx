@@ -482,12 +482,8 @@ export const Forms: Story = () => (
                 </Button>
             </fieldset>
         </Form>
-        <Input
-            value="I'm a readonly value"
-            className="form-group mt-3 mb-0"
-            readOnly={true}
-            label={<H2>Readonly</H2>}
-        />
+        <H2 className="mt-3">Readonly</H2>
+        <Input value="I'm a readonly value" readOnly={true} />
         <H2 className="mt-3">Sizing</H2>
         <Text>Form fields can be made smaller</Text>
         <div className="d-flex">
